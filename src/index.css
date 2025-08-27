@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-neutral-700;
+  }
+  
+  body {
+    @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  /* 모바일에서 기본 폰트 크기 조정 */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* 텍스트 선택 색상 개선 */
+  ::selection {
+    @apply bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-primary-100;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 dark:bg-neutral-800/10 border border-white/20 dark:border-neutral-700/20;
+  }
+  
+  /* 모바일 최적화된 버튼 */
+  .btn-mobile {
+    @apply min-h-[44px] min-w-[44px] touch-manipulation;
+  }
+  
+  /* 가독성 개선된 텍스트 클래스 */
+  .text-readable {
+    @apply text-neutral-800 dark:text-neutral-200;
+  }
+  
+  .text-readable-muted {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+  
+  .text-readable-light {
+    @apply text-neutral-500 dark:text-neutral-500;
+  }
+  
+  /* 모바일에서 터치 최적화 */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation;
+  }
+  
+  /* 반응형 타이포그래피 */
+  .heading-xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+  }
+  
+  .heading-md {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight;
+  }
+  
+  .heading-sm {
+    @apply text-base sm:text-lg md:text-xl font-semibold;
+  }
+  
+  .text-body {
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-xs sm:text-sm leading-normal;
+  }
+}
